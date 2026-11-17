@@ -76,3 +76,25 @@ resource "aws_route_table_association" "public" {
   subnet_id      = aws_subnet.public[count.index].id
   route_table_id = aws_route_table.public.id
 }
+
+resource "aws_route_table" "private" {
+  vpc_id = aws_vpc.main.id
+
+  tags = {
+    Name = "${var.project}-private-rt"
+  }
+}
+
+resource "aws_route_table_association" "app" {
+  count = var.az_count
+
+  subnet_id      = aws_subnet.app[count.index].id
+  route_table_id = aws_route_table.private.id
+}
+
+resource "aws_route_table_association" "db" {
+  count = var.az_count
+
+  subnet_id      = aws_subnet.db[count.index].id
+  route_table_id = aws_route_table.private.id
+}
