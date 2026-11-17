@@ -1,0 +1,23 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfplan
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraform.tfstate.lock.info
+
+# Never commit secrets or local variable files
+*.tfvars
+!example.tfvars
+.env
+
+# macOS
+.DS_Store
+
+# Local Claude Code instructions (not published)
+CLAUDE.md
+.claude/
