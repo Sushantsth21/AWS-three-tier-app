@@ -5,7 +5,7 @@ ALB → Auto Scaling group → RDS Multi-AZ across 2 Availability Zones, with st
 > Work in progress. Problem, design, diagram, cost and teardown sections are filled in as each layer lands.
 
 ## Progress
-- [ ] VPC + subnets (public / app / db tiers, 2 AZs, no NAT, S3 gateway endpoint)
+- [ x] VPC + subnets (public / app / db tiers, 2 AZs, no NAT, S3 gateway endpoint)
 - [ ] Security groups
 - [ ] ALB + Auto Scaling group
 - [ ] RDS Multi-AZ
